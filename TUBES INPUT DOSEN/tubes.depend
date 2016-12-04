@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1446667744 source:d:\tubes\tubes\main.cpp
+	<iostream>
+
+1479996545 source:d:\tubes\tubes\jurusan.cpp
+	"jurusan.h"
+
+1479995136 d:\tubes\tubes\jurusan.h
+	<iostream>
+
+1479997796 source:d:\tubes\tubes\dosen.cpp
+	"dosen.h"
+
+1479997153 d:\tubes\tubes\dosen.h
+	"jurusan.h"
+	<iostream>
+
+1480603097 source:d:\tubes\tubes mau di edit\main.cpp
+	<iostream>
+
+1480602501 source:d:\tubes\tubes mau di edit\dosen.cpp
+	"dosen.h"
+
+1480602525 d:\tubes\tubes mau di edit\dosen.h
+	<iostream>
+
+1480601977 source:d:\tubes\tubes mau di edit\jurusan.cpp
+	"jurusan.h"
+
+1480601287 d:\tubes\tubes mau di edit\jurusan.h
+	"dosen.h"
+	<iostream>
+
+1480852806 source:c:\users\agung jati prawira\desktop\tubes mau di edit\tubes mau di edit\dosen.cpp
+	"dosen.h"
+
+1480681234 c:\users\agung jati prawira\desktop\tubes mau di edit\tubes mau di edit\dosen.h
+	<iostream>
+
+1480842766 source:c:\users\agung jati prawira\desktop\tubes mau di edit\tubes mau di edit\jurusan.cpp
+	"jurusan.h"
+
+1480842766 c:\users\agung jati prawira\desktop\tubes mau di edit\tubes mau di edit\jurusan.h
+	"dosen.h"
+	<iostream>
+
+1480854493 source:c:\users\agung jati prawira\desktop\tubes mau di edit\tubes mau di edit\main.cpp
+	<iostream>
+	<stdlib.h>
+	<windows.h>
+	"jurusan.h"
+
+1480852806 source:c:\users\agung jati prawira\desktop\tubes mau di edit\tubes input dosen\dosen.cpp
+	"dosen.h"
+
+1480681234 c:\users\agung jati prawira\desktop\tubes mau di edit\tubes input dosen\dosen.h
+	<iostream>
+
+1480842766 source:c:\users\agung jati prawira\desktop\tubes mau di edit\tubes input dosen\jurusan.cpp
+	"jurusan.h"
+
+1480842766 c:\users\agung jati prawira\desktop\tubes mau di edit\tubes input dosen\jurusan.h
+	"dosen.h"
+	<iostream>
+
+1480855000 source:c:\users\agung jati prawira\desktop\tubes mau di edit\tubes input dosen\main.cpp
+	<iostream>
+	<stdlib.h>
+	<windows.h>
+	"jurusan.h"
+

@@ -1,0 +1,6 @@
+#ifndef FAKJUR_H_INCLUDED
+#define FAKJUR_H_INCLUDED
+
+
+
+#endif // FAKJUR_H_INCLUDED
