@@ -44,4 +44,5 @@ address_dosen FindElm(List_dosen L, int id);
 void PrintInfo(List_dosen L);
 address_dosen Alokasi (infotype_dosen x);
 
+
 #endif // DOSEN_H_INCLUDED

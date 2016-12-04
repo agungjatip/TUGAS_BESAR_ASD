@@ -97,11 +97,69 @@ int main()
             cout<<endl;
             if(FindElm(jus,j.tipe,j.nama_jurusan) == NULL)
             {
-                InsertFirst(jus,Alokasi(j));
+                int opin=0;
+                while (opin !=4)
+                {
+                    cout<<"1.Insert First"<<endl;
+                    cout<<"2.Insert After"<<endl;
+                    cout<<"3.Insert Last"<<endl;
+                    cout<<"4.Main Menu"<<endl;
+                    cout<<"Masukan Opsi : ";
+                    cin>>opin;
+                    if (opin==1)
+                    {
+                        InsertFirst(jus,Alokasi(j));
+                        break;
+                    }
+                    else if (opin==2)
+                    {
+                        address_jurusan carjus;
+                        infotype_jurusan ops;
+                        cout<<"ALAMAT JURUSAN : ";
+                        cin>>ops.alamat;
+                        cout<<endl;
+                        cout<<"TIPE JURUSAN : ";
+                        cin>>ops.tipe;
+                        cout<<endl;
+                        cout<<"JURUSAN : ";
+                        cin>>ops.nama_jurusan;
+                        cout<<endl;
+                        carjus = FindElm(jus,ops.tipe, ops.nama_jurusan);
+                        if(carjus != NULL)
+                        {
+                            InsertAfter(jus, carjus, Alokasi(j));
+                            cout<<"DATA MASUK!!!"<<endl;
+                            Sleep(1598);
+                            break;
+                        }
+                        else
+                        {
+                            cout<<"JURUSAN YANG DICARI TIDAK ADA"<<endl;
+                            Sleep(1244);
+                        }
+                    }
+                    else if (opin == 3)
+                    {
+                        InsertLast(jus,Alokasi(j));
+                        cout<<"DATA MASUK!!!"<<endl;
+                        Sleep(1287);
+                        break;
+                    }
+                    else if (opin == 4)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        cout<<"OPSI YANG ANDA IMPUTKAN SALAH!!!!!!"<<endl;
+                        Sleep(967);
+                    }
+                }
             }
             else
             {
-                cout<<"D"<<endl;
+                cout<<"DATA DUPLIKAT"<<endl;
+                Sleep(1976);
             }
 
             break;
@@ -199,9 +257,6 @@ int main()
                 cout<<"ID DOSEN : ";
                 cin>>d.id;
                 cout<<endl;
-                cout<<"ALAMAT JURUSAN : ";
-                cin>>j.alamat;
-                cout<<endl;
                 cout<<"TIPE JURUSAN : ";
                 cin>>j.tipe;
                 cout<<endl;
@@ -229,86 +284,84 @@ int main()
                 break;
             }
         }
-            case 6 :
+        case 6 :
+        {
+            system("cls");
+            address_jurusan carjus;
+            cout<<"CARI DATA JURUSAN"<<endl;
+            cout<<endl;
+            cout<<"TIPE JURUSAN : ";
+            cin>>j.tipe;
+            cout<<endl;
+            cout<<"JURUSAN : ";
+            cin>>j.nama_jurusan;
+            cout<<endl;
+            carjus = FindElm(jus, j.tipe, j.nama_jurusan);
+            if(carjus != NULL)
             {
-                system("cls");
-                address_jurusan carjus;
-                cout<<"CARI DATA JURUSAN"<<endl;
-                cout<<"ALAMAT JURUSAN : ";
-                cin>>j.alamat;
-                cout<<endl;
-                cout<<"TIPE JURUSAN : ";
-                cin>>j.tipe;
-                cout<<endl;
-                cout<<"JURUSAN : ";
-                cin>>j.nama_jurusan;
-                cout<<endl;
-                carjus = FindElm(jus, j.tipe, j.nama_jurusan);
-                if(carjus != NULL)
-                {
-                    cout<<"ID JURUSAN       : "<<info(carjus).id<<endl;
-                    cout<<"NAMA JURUSAN     : "<<info(carjus).nama_jurusan<<endl;
-                    cout<<"NAMA FAKULTAS    : "<<info(carjus).fakultas<<endl;
-                    cout<<"KAPASITAS JURUSAN: "<<info(carjus).kapasitas<<endl;
-                    cout<<"ALAMAT JURUSAN   : "<<info(carjus).alamat<<endl;
-                    cout<<"TIPE JURUSAN     : "<<info(carjus).tipe<<endl;
-                    Sleep(1000);
-                    break;
-                }
-                else
-                {
-                    cout<<"JURUSAN YANG DICARI TIDAK DITEMUKAN"<<endl;
-                }
+                cout<<"ID JURUSAN       : "<<info(carjus).id<<endl;
+                cout<<"NAMA JURUSAN     : "<<info(carjus).nama_jurusan<<endl;
+                cout<<"NAMA FAKULTAS    : "<<info(carjus).fakultas<<endl;
+                cout<<"KAPASITAS JURUSAN: "<<info(carjus).kapasitas<<endl;
+                cout<<"ALAMAT JURUSAN   : "<<info(carjus).alamat<<endl;
+                cout<<"TIPE JURUSAN     : "<<info(carjus).tipe<<endl;
+                Sleep(1000);
                 break;
             }
-            case 7 :
+            else
             {
-                cout<<"LIHAT DATA DOSEN"<<endl<<endl;
-                address_jurusan P = First(jus);
-                if(First(jus)!=NULL)
+                cout<<"JURUSAN YANG DICARI TIDAK DITEMUKAN"<<endl;
+            }
+            break;
+        }
+        case 7 :
+        {
+            cout<<"LIHAT DATA DOSEN"<<endl<<endl;
+            address_jurusan P = First(jus);
+            if(First(jus)!=NULL)
+            {
+                while (P != NULL)
                 {
-                    while (P != NULL)
+                    if (First(P->Ldosen) != NULL)
                     {
-                        if (First(P->Ldosen) != NULL)
+                        address_dosen Q = First(P->Ldosen);
+                        while(Q!=NULL)
                         {
-                            address_dosen Q = First(P->Ldosen);
-                            while(Q!=NULL)
-                            {
-                                cout<<"ID DOSEN             : "<<info(Q).id<<endl;
-                                cout<<"JURUSAN DOSEN        : "<<info(Q).nama_jurusan<<endl;
-                                cout<<"FAKULTAS DOSEN       : "<<info(Q).fakultas<<endl;
-                                cout<<"ALAMAT DOSEN         : "<<info(Q).alamat<<endl;
-                                cout<<"TIPE MENGAJAR DOSEN  : "<<info(Q).tipe<<endl;
-                                Q = next(Q);
-                            }
+                            cout<<"ID DOSEN             : "<<info(Q).id<<endl;
+                            cout<<"JURUSAN DOSEN        : "<<info(Q).nama_jurusan<<endl;
+                            cout<<"FAKULTAS DOSEN       : "<<info(Q).fakultas<<endl;
+                            cout<<"ALAMAT DOSEN         : "<<info(Q).alamat<<endl;
+                            cout<<"TIPE MENGAJAR DOSEN  : "<<info(Q).tipe<<endl;
+                            Q = next(Q);
                         }
-                        P = next(P);
                     }
+                    P = next(P);
                 }
-                Sleep(1000);
-                break;
             }
-            case 8 :
-            {
-                cout<<"LIHAT DATA JURUSAN"<<endl;
-                PrintInfo(jus);
-                Sleep(1000);
-                break;
-            }
-            case 9 :
-            {
-                cout<<"TERIMA KASIH"<<endl;
-                cout<<"AGUNG JATI PRAWIRA | 1301154421"<<endl;
-                cout<<"ROFIF IRSYAD FAKHRUDDIN | 1301150001"<<endl;
-                return 0;
-            }
-            default :
-            {
-                cout<<"INPUTAN YANG ANDA MASUKAN SALAH"<<endl;
-                Sleep(1000);
-                system("cls");
-            }
+            Sleep(1000);
+            break;
+        }
+        case 8 :
+        {
+            cout<<"LIHAT DATA JURUSAN"<<endl;
+            PrintInfo(jus);
+            Sleep(1000);
+            break;
+        }
+        case 9 :
+        {
+            cout<<"TERIMA KASIH"<<endl;
+            cout<<"AGUNG JATI PRAWIRA | 1301154421"<<endl;
+            cout<<"ROFIF IRSYAD FAKHRUDDIN | 1301150001"<<endl;
+            return 0;
+        }
+        default :
+        {
+            cout<<"INPUTAN YANG ANDA MASUKAN SALAH"<<endl;
+            Sleep(1000);
+            system("cls");
         }
         }
+    }
 }
 
