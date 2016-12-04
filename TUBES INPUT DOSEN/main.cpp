@@ -100,11 +100,11 @@ int main()
                 int opin=0;
                 while (opin !=4)
                 {
-                    cout<<"1.Insert First"<<endl;
-                    cout<<"2.Insert After"<<endl;
-                    cout<<"3.Insert Last"<<endl;
-                    cout<<"4.Main Menu"<<endl;
-                    cout<<"Masukan Opsi : ";
+                    cout<<"1.INSERT FIRST"<<endl;
+                    cout<<"2.INSERT AFTER"<<endl;
+                    cout<<"3.INSERT LAST"<<endl;
+                    cout<<"4.KEMBALI KE MAIN MENU"<<endl;
+                    cout<<"MASUKKAN PILIHAN ANDA : ";
                     cin>>opin;
                     if (opin==1)
                     {
